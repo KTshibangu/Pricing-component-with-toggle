@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+body {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--Very-Light-Grayish-Blue);
+    background-image: url(images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 300px 0;
+}
+
+.container {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.header h1 {
+    font-size: 40px;
+    color: var(--Grayish-Blue);
+    margin-bottom: 40px;
+}
+
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.monthly,
+.annual {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--Light-Grayish-Blue);
+}
+
+.slider-active {
+    font-weight: 900;
+}
+
+.label-slider {
+    display: inline-block;
+    position: relative;
+    width: 68px;
+    height: 38px;
+}
+
+.label-slider input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: hsl(237, 63%, 64%);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
+}
+
+.cards-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.card {
+    width: 400px;
+    height: 565px;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+} 
+
+.purple {
+    width: 400px;
+    height: 565px;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.purple h5 {
+    color: white;
+    font-size: 24px;
+}
+
+.purple .price-2 {
+    font-size: 80px;
+    font-weight: bolder;
+    color: white;
+    margin: 32px 0;
+}
+
+.purple span {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.card h5 {
+    color: var(--Grayish-Blue);
+    font-size: 24px;
+}
+
+.price-1,
+.price-3 {
+    font-size: 80px;
+    font-weight: bolder;
+    color: var(--Dark-Grayish-Blue);
+    margin: 32px 0;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--Light-Grayish-Blue);
+    margin: 20px 0;
+}
+
+.card span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--Grayish-Blue);
+}
+
+.card button {
+    display: inline-block;
+    margin: 30px 0;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    transition: 0.8s;
+}
+
+.card button:hover {
+    background: white;
+    border: 0.4px solid hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+}
+
+.purple button {
+    display: inline-block;
+    margin: 30px 0;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    color: hsl(237, 63%, 64%);
+    background: white;
+    transition: 0.8s;
+}
+
+.purple button:hover {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border: 0.4px solid white;
+    color: white;
+}
+
+
+@media screen and (min-width: 900px) {
+    .cards-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        place-content: center;
+    }
+          
+}
+
+@media screen and (min-width: 1280px) {
+    .cards-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px;
+    }
+    
+    .card {
+        height: 520px;
+        margin: auto;
+    }
+
+    .card button {
+        margin: 10px 0;
+    }
+}
+
+
