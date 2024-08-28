@@ -82,6 +82,14 @@ body {
     transition: 0.4s;
 }
 
+.slider:hover {
+    background-color: hsl(237, 63%, 80%);
+}
+
+.slider:active {
+    background-color: hsl(237, 63%, 80%);
+}
+
 .slider:before {
     position: absolute;
     content: "";
